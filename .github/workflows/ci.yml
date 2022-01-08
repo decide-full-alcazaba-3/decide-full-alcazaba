@@ -34,6 +34,7 @@ jobs:
     - name: Run migrations
       run: cd decide;python manage.py makemigrations;python manage.py migrate
     - name: Run tests     
+
       run: cd decide;coverage run --branch --source=. ./manage.py test voting booth --keepdb; coverage xml;
     - name: Codacy Coverage Reporter
       uses: codacy/codacy-coverage-reporter-action@v1.1.0
@@ -49,3 +50,4 @@ jobs:
            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
            heroku_app_name: "decide-full-alcazaba-3"
            heroku_email: "pachecomarquezjavier@gmail.com"
+
